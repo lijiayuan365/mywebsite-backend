@@ -6,6 +6,7 @@ specifiers:
   '@nestjs/core': ^10.0.0
   '@nestjs/platform-express': ^10.0.0
   '@nestjs/schematics': ^10.0.0
+  '@nestjs/swagger': ^7.3.1
   '@nestjs/testing': ^10.0.0
   '@types/express': ^4.17.17
   '@types/jest': ^29.5.2
@@ -22,6 +23,7 @@ specifiers:
   rxjs: ^7.8.1
   source-map-support: ^0.5.21
   supertest: ^6.3.3
+  swagger-ui-express: ^5.0.0
   ts-jest: ^29.1.0
   ts-loader: ^9.4.3
   ts-node: ^10.9.1
@@ -34,10 +36,12 @@ dependencies:
   '@nestjs/platform-express': 10.3.8_7qxsncdukxfxm6f7ehu5tvov44
   reflect-metadata: 0.2.2
   rxjs: 7.8.1
+  swagger-ui-express: 5.0.0
 
 devDependencies:
   '@nestjs/cli': 10.3.2
   '@nestjs/schematics': 10.1.1_typescript@5.4.5
+  '@nestjs/swagger': 7.3.1_7pf7tbhzcjqguyvftsvmp2xvfq
   '@nestjs/testing': 10.3.8_npyyhkf36xojpgp5hfhsblkm4a
   '@types/express': 4.17.21
   '@types/jest': 29.5.12
@@ -842,6 +846,10 @@ packages:
     resolution: {integrity: sha512-Z7C/xXCiGWsg0KuKsHTKJxbWhpI3Vs5GwLfOean7MGyVFGqdRgBbAjOCh6u4bbjPc/8MJ2pZmK/0DLdCbivLDA==}
     engines: {node: '>=8'}
 
+  /@microsoft/tsdoc/0.14.2:
+    resolution: {integrity: sha512-9b8mPpKrfeGRuhFH5iO1iwCLeIIsV6+H1sRfxbkoGXIyQE2BTsPd9zqSqQJ+pv5sJ/hT5M1zvOFL02MnEezFug==}
+    dev: true
+
   /@nestjs/cli/10.3.2:
     resolution: {integrity: sha512-aWmD1GLluWrbuC4a1Iz/XBk5p74Uj6nIVZj6Ov03JbTfgtWqGFLtXuMetvzMiHxfrHehx/myt2iKAPRhKdZvTg==}
     engines: {node: '>= 16.14'}
@@ -933,6 +941,23 @@ packages:
     transitivePeerDependencies:
       - encoding
 
+  /@nestjs/mapped-types/2.0.5_xjidj2hjgx4p22o7l2ivqlqfle:
+    resolution: {integrity: sha512-bSJv4pd6EY99NX9CjBIyn4TVDoSit82DUZlL4I3bqNfy5Gt+gXTa86i3I/i0iIV9P4hntcGM5GyO+FhZAhxtyg==}
+    peerDependencies:
+      '@nestjs/common': ^8.0.0 || ^9.0.0 || ^10.0.0
+      class-transformer: ^0.4.0 || ^0.5.0
+      class-validator: ^0.13.0 || ^0.14.0
+      reflect-metadata: ^0.1.12 || ^0.2.0
+    peerDependenciesMeta:
+      class-transformer:
+        optional: true
+      class-validator:
+        optional: true
+    dependencies:
+      '@nestjs/common': 10.3.8_bx7ns4a6im6ljmadd2c7gy34li
+      reflect-metadata: 0.2.2
+    dev: true
+
   /@nestjs/platform-express/10.3.8_7qxsncdukxfxm6f7ehu5tvov44:
     resolution: {integrity: sha512-sifLoxgEJvAgbim1UuW6wyScMfkS9SVQRH+lN33N/9ZvZSjO6NSDLOe+wxqsnZkia+QrjFC0qy0ITRAsggfqbg==}
     peerDependencies:
@@ -977,6 +1002,34 @@ packages:
       typescript: 5.4.5
     transitivePeerDependencies:
       - chokidar
+    dev: true
+
+  /@nestjs/swagger/7.3.1_7pf7tbhzcjqguyvftsvmp2xvfq:
+    resolution: {integrity: sha512-LUC4mr+5oAleEC/a2j8pNRh1S5xhKXJ1Gal5ZdRjt9XebQgbngXCdW7JTA9WOEcwGtFZN9EnKYdquzH971LZfw==}
+    peerDependencies:
+      '@fastify/static': ^6.0.0 || ^7.0.0
+      '@nestjs/common': ^9.0.0 || ^10.0.0
+      '@nestjs/core': ^9.0.0 || ^10.0.0
+      class-transformer: '*'
+      class-validator: '*'
+      reflect-metadata: ^0.1.12 || ^0.2.0
+    peerDependenciesMeta:
+      '@fastify/static':
+        optional: true
+      class-transformer:
+        optional: true
+      class-validator:
+        optional: true
+    dependencies:
+      '@microsoft/tsdoc': 0.14.2
+      '@nestjs/common': 10.3.8_bx7ns4a6im6ljmadd2c7gy34li
+      '@nestjs/core': 10.3.8_u7ebqpbhpegjlhevz6gpayzl6y
+      '@nestjs/mapped-types': 2.0.5_xjidj2hjgx4p22o7l2ivqlqfle
+      js-yaml: 4.1.0
+      lodash: 4.17.21
+      path-to-regexp: 3.2.0
+      reflect-metadata: 0.2.2
+      swagger-ui-dist: 5.11.2
     dev: true
 
   /@nestjs/testing/10.3.8_npyyhkf36xojpgp5hfhsblkm4a:
@@ -4667,6 +4720,18 @@ packages:
     resolution: {integrity: sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w==}
     engines: {node: '>= 0.4'}
     dev: true
+
+  /swagger-ui-dist/5.11.2:
+    resolution: {integrity: sha512-jQG0cRgJNMZ7aCoiFofnoojeSaa/+KgWaDlfgs8QN+BXoGMpxeMVY5OEnjq4OlNvF3yjftO8c9GRAgcHlO+u7A==}
+
+  /swagger-ui-express/5.0.0:
+    resolution: {integrity: sha512-tsU9tODVvhyfkNSvf03E6FAk+z+5cU3lXAzMy6Pv4av2Gt2xA0++fogwC4qo19XuFf6hdxevPuVCSKFuMHJhFA==}
+    engines: {node: '>= v0.10.32'}
+    peerDependencies:
+      express: '>=4.0.0 || >=5.0.0-beta'
+    dependencies:
+      swagger-ui-dist: 5.11.2
+    dev: false
 
   /symbol-observable/4.0.0:
     resolution: {integrity: sha512-b19dMThMV4HVFynSAM1++gBHAbk2Tc/osgLIBZMKsyqh34jb2e8Os7T6ZW/Bt3pJFdBTd2JwAnAAEQV7rSNvcQ==}
